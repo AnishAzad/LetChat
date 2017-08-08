@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="table-responsive" ng-show="currentUser.role=='Admin'">
+List of Forum Posts Waiting for Approval
+<table class="table">
+<tr><th>Recent Posts</th></tr>
+<tr ng-repeat="forumPost in forumsWaitingForApproval | orderBy:'time':true">
+<td><a href="#getForumForApproval/{{forumPost.id}}">{{forumPost.title}}</a></td>
+<td>Created By:{{forumPost.createdBy.username}}</td>
+<td>Created On:{{forumPost.postedOn | date:'MM/dd/yyyy HH:mm'}}</td>
+</tr>
+</table>
+</div>
+
+<div class="table-responsive">
+List of Forum Posts
+<table class="table">
+<tr><th>Recent Posts</th></tr>
+<tr ng-repeat="forumPost in forumsApproved | orderBy:'time':true">
+<td><a href="#getForumDetail/{{forumPost.id}}">{{forumPost.title}}</a></td>
+<td>Created By:{{forumPost.createdBy.username}}</td>
+<td>Created On:{{forumPost.postedOn | date:'MM/dd/yyyy HH:mm'}}</td>
+</tr>
+</table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<form>
+
+<P class="text-center">ENTER FIRSTNAME:<input type="text"  ng-model="user.firstname" placeholder="ENTER FIRSTNAME"></P><br>
+
+<P class="text-center">ENTER LASTNAME:	<input type="text"  ng-model="user.lastname"  placeholder="ENTER LASTNAME"></P><br>
+
+<P class="text-center">ENTER EMAIL:	<input type="text" ng-model="user.email" 	 placeholder="ENTER EMAIL ID"></p><br>
+
+<P class="text-center">ENTER USERNAME:	<input type="text" ng-model="user.username"  placeholder="ENTER USERNAME"></P><br>
+
+<P class="text-center">ENTER PASSWORD:	<input type="password" ng-model="user.password"  placeholder="ENTER PASSWORD"></P><br>
+
+<P class="text-center">SELECT ROLE:	<input type="radio" ng-model="user.role" value="Student">Student</P><br>
+				
+<P class="text-center"><input type="radio" ng-model="user.role" value="Alumini">Alumini</P><br>
+				
+<P class="text-center"><input type="radio" ng-model="user.role" value="Employee">Employee</p><br>
+				
+<P class="text-center"><input type="submit" ng-click="register()"><br>
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="row">
+<div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<div>{{forumPost.title}}</div>
+<span><strong>Created By:</strong>{{forumPost.createdBy.username}}</span>
+<span><strong>on: </strong>{{forumPost.postedOn | date:'medium'}}</span>
+</div>
+<div class="panel-body">{{forumPost.message}}</div>
+</div>
+</div>
+</div>
+<form>
+<input type="radio" ng-model="forumPost.approved" value="true">Approve<br>
+<input type="radio" ng-model="forumPost.approved" value="false">Reject<br>
+<button ng-click="updateApproval()">Update Approval</button>
+<!-- <button class="btn btn-default" ng-click="updateApproval()" value="update Status">Update Approval</button> -->
+</form>
+</body>
+</html> 

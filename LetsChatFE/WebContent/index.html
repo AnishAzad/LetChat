@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+     
+   
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+	rel="stylesheet" />
+<title>Insert title here</title>
+</head>
+<body ng-app="myApp">
+
+<header>
+            <nav class="navbar navbar-default">
+            
+           <div class="container-fluid">
+		<button type="button" class="navbar-toggle collapsed" 
+   data-toggle="collapse" data-target="#collapse-example" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/"><b>LetsChat</b></a>
+                   <!--  <a href="#" class="navbar-brand"><img src="F:\Workspace1\LetsChatFE\WebContent\image\images (10).jpg" alt="" height="30px" width="50px"></a> -->
+                    
+                    
+               </div>
+
+                
+<div class="collapse navbar-collapse" id="collapse-example">
+                <ul class="nav navbar-nav ">
+ <li><a href="#/registration" ng-hide="currentUser.firstname">Register</a></li>
+ <li><a href="#/login" ng-hide="currentUser.firstname">login</a></li>
+ <li><a href="#/profilepic" ng-show="currentUser.firstname">
+<img src="http://localhost:8084/LetsChatBE/getimage/{{currentUser.username}}" 
+   alt="Upload image" width="30px" height="30px" class="img-rounded"></a></li>
+ <li><a href="#/savejob" ng-show="currentUser.role=='Admin'">Save Job Details</a><li>
+ <li><a href="#/getalljobs" ng-show="currentUser.firstname">GetAllJobs</a></li>
+  <li><a href="#/edituserprofile">Edit Profile</a></li>  
+ 
+  
+  <!-- BLOG MODULE -->    
+  <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown" ng-show="currentUser.username"> Blog Module <b class="caret"></b></a>
+   <ul class="dropdown-menu">
+     <li><a href="#/saveblogpost">Add Blog Post </a></li>
+     <li><a href="#/getallblogs">View All Blogs </a></li>
+     </ul>
+     </li>
+     
+ 
+ 
+ 
+  <li class="dropdown"><a href="" class="dropdown-toggle"
+						data-toggle="dropdown" ng-show="currentUser.username"> Friend <b
+							class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#/suggestedusers">List of Suggested Users</a></li>
+							<li><a href="#/pendingrequests">Pending requests</a></li>
+							<li><a href="#/listoffriends">Friends</a></li>
+						</ul></li>
+						
+						<!-- FORUM MODULE -->    
+  <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown" ng-show="currentUser.username"> Forum Module <b class="caret"></b></a>
+   <ul class="dropdown-menu">
+     <li><a href="#/saveforumpost">Add Forum Post </a></li>
+     <li><a href="#/getallforums">View All Forums </a></li>
+     </ul>
+     </li>
+  
+ <li><a href="#chat" ng-show="currentUser.username">chat </a></li>
+ 
+  <li><a href=""   ng-show="currentUser.firstname">Welcome {{currentUser.firstname}} &nbsp; {{currentUser.lastname}}</a></li>
+ <li><a href="" ng-click="logout()" ng-show="currentUser.firstname">logout</a></li>
+ </ul>
+            </div>
+            </div>
+            
+            </nav>
+        </header>
+        
+        
+<div ng-view></div>
+ </body>
+  <script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+<!--  Angular JS ngRoute -->
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+	<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
+    <!--  BootStrap
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
+<script type="text/javascript"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	  
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
+ -->    
+     <script type="text/javascript" src="js/app.js"></script>
+     <script type="text/javascript" src="controller/usercontroller.js"></script>
+     <script type="text/javascript" src="service/userservice.js"></script>
+     <script type="text/javascript" src="controller/jobcontroller.js"></script>
+      <script type="text/javascript" src="service/jobservice.js"></script>
+      <script type="text/javascript" src="controller/blogcontroller.js"></script>
+      <script type="text/javascript" src="service/blogpostservice.js"></script>
+      <script type="text/javascript" src="controller/blogdetailcontroller.js"></script>
+      <script type="text/javascript" src="service/friendservice.js"></script>
+      <script type="text/javascript" src="controller/friendcontroller.js"></script>
+       <script type="text/javascript" src="controller/forumcontroller.js"></script>
+      <script type="text/javascript" src="service/forumpostservice.js"></script>
+      <script type="text/javascript" src="controller/forumdetailcontroller.js"></script>
+     
+      
+      
+       <script  src="js/sockjs/sockjs.js"></script>
+    <script  src="js/stomp/dist/stomp.js"></script>
+
+
+ <script type="text/javascript" src="controller/chatcontroller.js"></script>
+  <script type="text/javascript" src="service/chatservice.js"></script>
+  
+  
+      
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

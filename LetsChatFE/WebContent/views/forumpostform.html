@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head> 
+<body>
+
+
+{{message}}
+<form>
+<table>
+
+<tr>
+<td>Enter Forum Title</td>
+<td><input ng-model="forumPost.title"></td>
+
+</tr>
+<tr>
+<td>Enter Forum Message</td>
+<td><textarea ng-model="forumPost.message"></textarea></td>
+</tr>
+<td>
+<button class="btn btn-default" ng-click="saveForumPost()">Post Forum</button>
+</td><td></td>
+</table>
+</form>
+
+
+</body>
+</html>

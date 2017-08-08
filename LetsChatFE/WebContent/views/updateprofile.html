@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+Update Details
+<form>
+FIRSTNAME:<input type="text" ng-model="userobj.firstname"><br>
+ LASTNAME:<input type="text" ng-model="userobj.lastname"><br>
+ EMAIL:<input type="text" ng-model="userobj.email"><br>
+ USERNAME:<input type="text" ng-model="userobj.username" disabled="true"><br>
+ PASSWORD:<input type="password" ng-model="userobj.password"><br>
+  ROLE:<input type="radio" ng-model="userobj.role" value="Student">Student<br>
+<input type="radio" ng-model="userobj.role" value="Alumini">Alumini<br>
+<input type="radio" ng-model="userobj.role" value="Employee">Employee<br>
+<input type="submit" ng-click="update()"><br>
+</form>
+
+
+</body>
+</html>
