@@ -21,7 +21,7 @@ public class Users {
 	
 	@Id
 	private  String username;
-	@Size(min=1,max=12,message="Invalid first name")
+	@Size(min=1,max=12)
 	private String firstname;
 	@Column(name="EMAIL", length=50)
 	@NotNull
@@ -29,7 +29,7 @@ public class Users {
 	@Pattern(regexp="^.+@.+\\..+$")
 	private String email;
 
-	@Size(min=1,max=12,message="Invalid first name")
+	@Size(min=1,max=12)
 	private String lastname;
 	
 	@Size(min=1,max=10)
