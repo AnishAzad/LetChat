@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
 import org.springframework.stereotype.Component;
 
@@ -19,8 +21,11 @@ public class Users {
 	@Column
 	private String firstname;
 	private String email;
+	@NotNull
 	private String lastname;
+	@NotNull
 	private String password;
+	
 	private String role;
 	boolean enabled=true;
 	@Column(name="on_line")private boolean online;
